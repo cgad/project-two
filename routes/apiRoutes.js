@@ -56,8 +56,8 @@ var datum = require("datumbox").factory("917ef13adf4f58b8421cc6a161f94f5a");
 // textToCheck = string of user input in textarea
 // serviceValues = array of service value strings of user input in check boxes
 app.post("/api/results", function(err, res) {
-  
-  var serviceValues = ['SubjectivityAnalysis', 'SentimentAnalysis', 'TopicClassification', 'AdultContentDetection', ]
+
+  var serviceValues = ['SubjectivityAnalysis', 'SentimentAnalysis', 'TopicClassification', 'AdultContentDetection', 'CommercialDetection'];
   datum.parallel(textToCheck, serviceValues,
     function(err, results) {
       if (err) return console.error(err);
