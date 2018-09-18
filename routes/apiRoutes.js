@@ -45,6 +45,8 @@ module.exports = function(app) {
         if (err) return console.error(err);
         // return results array matching serviceValues array
         res.json(results);
+        //JACOB: changed this from return(results)
+        //recieves response array from datum CHECK
       }
     );
   })
