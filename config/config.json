@@ -2,13 +2,17 @@
   "development": {
     "username": "root",
     "password": "root",
+<<<<<<< HEAD
+    "database": "exampledb",
+=======
     "database": "saved_db",
+>>>>>>> a6a32447511910efa9032fa3febf048bc173cecc
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",
