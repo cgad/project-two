@@ -27,9 +27,9 @@
 
     </section>
 
-    <section class="section static id="form">
+    <section class="section static" id="form">
 
-        <div class="card">
+        <div class="card" id="textCard">
             <div class="card-body">
                 <form>
                     <div class="form-group">
@@ -41,6 +41,14 @@
                 </form>
             </div>
         </div>
+
+        <div class="card" id="resultsCard">
+            <div class="card-body">
+                <h5>Results:</h5>
+            </div>
+        </div>
+
+       
 
     </section>
 
@@ -58,16 +66,53 @@
 
 <script>
 
-{{!-- function form() {
-var elmnt = document.getElementById("form");
-elmnt.scrollIntoView();
-} --}}
+    $(function(){
+    
+    'use strict';
+    
+    $('#button').click(function(e){
+        
+        e.preventDefault();
+        
+        $('html, body').animate({
+            
+            scrollTop: $('#form' +$(this).data('scroll')).offset()
+            
+            
+        }, 2000); 
+        console.log('working')       
+    });
+});
 
-{{!-- var form = $("#form");
-var offset = form.offset();
-console.log(offset);
-$("#button").on("click", function () {
-	window.scrollTo(0, offset.top);
-}); --}}
+    //$(function() {
+    //$('a[href="#form"']).click(function() {
+        //var target = $(this.hash);
+        //target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+        //if (target.length) {
+            //$('html,body').animate({
+              //scrollTop: target.offset().top
+            //}, 1000);
+            //return false;
+       // }
+    //});
+//});
+
+    //$("#button").click(function() {
+        //console.log("#button");
+    //$("html,body").animate({
+        //scrollTop: $("#form").offset()},
+        //"slow");
+//});
+
+//function form() {
+//var elmnt = document.getElementById("form");
+//elmnt.scrollIntoView();
+//}
+
+//var form = $("#form");
+//var offset = form.offset();
+//$("#button").on("click", function () {
+	//window.scrollTo(0, offset.top);
+//});
 
 </script>

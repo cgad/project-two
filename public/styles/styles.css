@@ -12,6 +12,25 @@
   opacity: 0.70;
 }
 
+.form-group {
+  color: black;
+}
+
+h1, h5 {
+  color: black;
+}
+
+#resultsCard {
+  position: relative;
+  right: 40%;
+  
+}
+
+#textCard {
+  position: absolute;
+  width: 60%;
+}
+
 .wrapper {
   height: 100vh;
   perspective: 2px;
