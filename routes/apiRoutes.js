@@ -37,14 +37,14 @@ module.exports = function(app) {
   // asynchronous parallel service request from DatumBox on text.
   //
   // textToCheck = string of user input in textarea
-  app.post("/api/results", function(err, res) {
-
+  app.post("/api/results", function(req, res) {
+    var textToCheck = '';
     var serviceValues = ['SubjectivityAnalysis', 'SentimentAnalysis', 'TopicClassification', 'AdultContentDetection', 'CommercialDetection'];
-    datum.parallel("buy me a wiener dog who is friends with a frog", serviceValues,
+    datum.parallel(textToCheck, serviceValues,
       function(err, results) {
         if (err) return console.error(err);
         // return results array matching serviceValues array
-        return(results);
+        res.json(results);
       }
     );
   })
