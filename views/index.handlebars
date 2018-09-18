@@ -1,29 +1,73 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="form.html">Form</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<main class="wrapper">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="form">Form</a>
+                    </li>
+        </nav>
 
-<div class="jumbotron">
-  <h1 class="display-4">I Call Bullshit!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-    featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="form.html" role="button">Learn more</a>
-  </p>
-</div>
+    <section class="section parallax bg1">
 
-<footer class="footer">
-  <div class="container">
-    <p>Created By: Cara Adelson, Jacob Artz, Jamie DeHaan, Stephen Michael & Tyler Winstead</p>
-  </div>
-</footer>
+        <div class="jumbotron">
+            <h1 class="display-4">I Call Bullshit!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
+                to
+                featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p class="lead">
+                <a class="btn btn-secondary btn-lg" id="button" role="button">Learn more</a>
+            </p>
+        </div>
+
+    </section>
+
+    <section class="section static id="form">
+
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="text">Enter Text Here</label>
+                        <textarea class="form-control" id="text" rows="10"></textarea>
+                        <br>
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section parallax bg2">
+        <h1>DATABASE HERE</h1>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Created By: Cara Adelson, Jacob Artz, Jamie DeHaan, Stephen Michael & Tyler Winstead</p>
+        </div>
+    </footer>
+
+</main>
+
+<script>
+
+{{!-- function form() {
+var elmnt = document.getElementById("form");
+elmnt.scrollIntoView();
+} --}}
+
+{{!-- var form = $("#form");
+var offset = form.offset();
+console.log(offset);
+$("#button").on("click", function () {
+	window.scrollTo(0, offset.top);
+}); --}}
+
+</script>
