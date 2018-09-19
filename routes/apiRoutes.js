@@ -2,29 +2,31 @@
 // api-key: 917ef13adf4f58b8421cc6a161f94f5a
 var datum = require("datumbox").factory("917ef13adf4f58b8421cc6a161f94f5a");
 var app = require("express");
-var db = require("../models");
+var db = require("../models").saved;
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all saveds
+  app.get("/api/saveds", function(req, res) {
+    db.findAll({}).then(function(dbSaved) {
+      res.json(dbSaved);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Create a new Saved
+  app.post("/api/saveds", function(req, res) {
+    db.create(req.body).then(function(dbSaved) {
+      res.json(dbSaved);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  // Delete an Saved by id
+  app.delete("/api/saveds/:id", function(req, res) {
+    db.destroy({ where: { id: req.params.id } }).then(function(dbSaved) {
+      res.json(dbSaved);
     });
   });
+
+  //I THINK WE DO NOT NEED UPDATE
   
   // DatumBox API NODE.JS CODE
 
@@ -35,14 +37,16 @@ module.exports = function(app) {
   // asynchronous parallel service request from DatumBox on text.
   //
   // textToCheck = string of user input in textarea
-  app.post("/api/results", function(err, res) {
-
+  app.post("/api/results", function(req, res) {
+    var textToCheck = '';
     var serviceValues = ['SubjectivityAnalysis', 'SentimentAnalysis', 'TopicClassification', 'AdultContentDetection', 'CommercialDetection'];
     datum.parallel(textToCheck, serviceValues,
       function(err, results) {
         if (err) return console.error(err);
         // return results array matching serviceValues array
-        return(results);
+        res.json(results);
+        //JACOB: changed this from return(results)
+        //recieves response array from datum CHECK
       }
     );
   })
